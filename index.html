@@ -41,6 +41,69 @@
         });
     </script>
 
+    <!--Cookis information -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.ihavecookies.js"></script>
+    <script type="text/javascript">
+        var options = {
+            title: '&#x1F36A; Cookies & RODO ',
+            message: 'Używamy informacji zapisanych za pomocą plików cookies w celu zapewnienia maksymalnej wygody w korzystaniu z naszego serwisu. Mogą też korzystać z nich współpracujące z nami firmy badawcze oraz reklamowe. Jeżeli wyrażasz zgodę na zapisywanie informacji zawartej w cookies kliknij <b>"Akceptuę"</b>.<br/> Jeśli nie wyrażasz zgody, ustawienia dotyczące plików cookies możesz zmienić te ustawienia w swojej przeglądarce.',
+            delay: 600,
+            expires: 1,
+            link: '#privacy', //link do polityki cookies
+            onAccept: function() {
+                var myPreferences = $.fn.ihavecookies.cookie();
+                console.log('Yay! The following preferences were saved...');
+                console.log(myPreferences);
+            },
+            uncheckBoxes: true,
+            acceptBtnLabel: 'Akceptuję',
+            moreInfoLabel: 'Więcej informacji',
+            cookieTypesTitle: 'Wybierz na które ciasteczka wyrażasz zgodę',
+            fixedCookieTypeLabel: 'Essential',
+            fixedCookieTypeDesc: 'These are essential for the website to work correctly.'
+        }
+
+        $(document).ready(function() {
+            $('body').ihavecookies(options);
+
+            if ($.fn.ihavecookies.preference('marketing') === true) {
+                console.log('This should run because marketing is accepted.');
+            }
+
+            $('#ihavecookiesBtn').on('click', function() {
+                $('body').ihavecookies(options, 'reinit');
+            });
+        });
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Quicksand:400,500" rel="stylesheet">
+    <link href="css/cookis_style.css" rel="stylesheet">
+    <!--Cookis information - END -->
+
+
+
+
+    <!-- Email send -->
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+    <script>
+        $(document).ready(function() {
+            $("html").on("submit", "#contact_form", function(e) {
+                e.preventDefault();
+                $("#send_form_status").html('').hide();
+                var data = $("#contact_form").serialize();
+                $.post("php/send_form.php", data, function(res) {
+                    $("#send_form_status").html(res.msg).show();
+                    if (res.status == 1) {
+                        $("#contact_form")[0].reset();
+                    }
+                });
+            });
+        });
+    </script>
+
+
+
+
     <!--FONTS-->
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Titillium+Web&display=swap" rel="stylesheet">
 
@@ -67,12 +130,63 @@
         </ul>
     </nav>
 
-    <div id="baner" class="section">
+
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/slider5_format.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <div class="slider_txt">
+                        <h1>PROFESJONALNE ROZWIĄZANIA</h1>
+                        <h2>DLA TWOJEGO BIZNESU</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/slider1_format.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <div class="slider_txt">
+                        <h1>E-COMMERCE</h1>
+                        <h2>KOMPLEKSOWA OBSŁUGA STRON INTERNETOWYCH I SKLEPÓW INTERNETOWYCH</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/slider4_format.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <div class="slider_txt">
+                        <h1>PROFESJONALNE ROZWIĄZANIA</h1>
+                        <h2>DLA TWOJEGO BIZNESU</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+
+
+
+    <!--
         <div id="baner_text">
             <h1>PROFESJONALNE ROZWIĄZANIA</h1>
             <h2>DLA TWOJEGO BIZNESU</h2>
-        </div>
-    </div>
+        </div> 
+        -->
+
+
     <!--  O MNIE -->
     <div id="o_mnie" class="section">
         <div class="container">
@@ -86,6 +200,9 @@
             <p style="margin-top: 10px; text-align: justify; text-indent: 5%; "> Kładę duży nacisk na strukturę SEO każdego projektu, dzięki czemu kod Twoje strony jest czysty a sama strona po publikacji w internecie szybko indeksuje się w Google. Cały proces tworzenia strony opiera się na optymalizacji efektów, dzięki
                 czemu w krótkim czasie Twoja strona uzyskuje wysoką pozycję w wyszukiwarce co jest niezwykle ważnym elementem każdego biznesu.
             </p>
+            <br/><br/>
+            <h3>Jak działam i w czym Ci pomogę.</h3>
+            <br/>
             <!-- First Line -->
             <div class="center_div">
                 <div class="my_icons_box">
@@ -106,7 +223,7 @@
                     <span class="icon"><img src="img/my_icon3p.png"></span>
                     <div class="text">
                         <h3>OPTYMALIZACJA</h3>
-                        <p>Zoptymalizuje działanie każdej stron internetowych jak i sklepu internetowego.</p>
+                        <p>Optymalizacjia kodu Twoje strony internetowej, która powzwoli na szybsze osiągnięcie założonego celu.</p>
                     </div>
                 </div>
                 <br style="clear: both;" />
@@ -132,8 +249,8 @@
                 <div class="my_icons_box">
                     <span class="icon"><img src="img/my_icon6p.png"></span>
                     <div class="text">
-                        <h3>E-commerce</h3>
-                        <p>Tworzenie i optymalizacjia sklepów internetowych od postaw do zaawansowancyh rozwiązań.</p>
+                        <h3>User experience (UX)</h3>
+                        <p>Każdy użytkownik odwiedzający Twoją stronę będzie czuł się swobodnie, dzięi czemu wzrost konwersji i liczby odwiedziń to kwestia czasu.</p>
                     </div>
                 </div>
                 <br style="clear: both;" />
@@ -142,14 +259,16 @@
             <!-- Third line-->
             <div class="center_div">
                 <div class="my_icons_box"><img src="img/my_icon7p.png">
-                    <h3>ANALIZA i STRATEGIA</h3>
-                    <p>Dobry plan to podstawa sukcesu.</p>
+                    <div class="text">
+                        <h3>ANALIZA i STRATEGIA</h3>
+                        <p>Dobry plan to podstawa sukcesu. Przed rozpaczęciem działania analizuje wszystkie możliwości i wybieram najskuteczniejszą.</p>
+                    </div>
                 </div>
                 <div class="my_icons_box">
                     <span class="icon"><img src="img/my_icon8p.png" alt=""></span>
                     <div class="text">
-                        <h3>TEXT</h3>
-                        <p>TEXT sdsawe fseRWA rwewE w</p>
+                        <h3>CMS</h3>
+                        <p>Przyjazny i prosty w zarządzaniu system CMS, pozwalający bez znajmości programowania na swobodne zarządzenie stroną.</p>
                     </div>
                 </div>
                 <div class="my_icons_box">
@@ -335,31 +454,47 @@
                         </div>
                     </div>
                     <div class=column>
-                        <form action=/action_page.php>
-                            <div class=contact_form_left>
-                                <label for=imie>Imie *</label> <input type=text id=fname name=imie placeholder=Imie required>
-                            </div>
-                            <div class=contact_form_right>
-                                <label for=lname>Nazwisko *</label> <input type=text id=nazwisko name=nazwisko placeholder=Nazwisko required>
-                            </div>
+                        <br/>
+
+                        <div id="send_form_status"></div>
+                        <form method="post" action="php/send_form.php" id="contact_form">
+                            <div class="contact_form_left"><label for="name">Imię</label>
+                                <input type="text" name="name" id="name" class="formField" required/></div>
+                            <div class="contact_form_right"><label for="lname">Nazwisko</label>
+                                <input type="text" name="lname" id="lname" class="formField" required/></div>
                             <br style="clear: both">
-                            <div style="flat: left; margin-top: 1px">
-                                <label for=country>Adres email *</label> <input type=email id=email name=email placeholder="Adres mailowy"> <label for=country required>Numer telefonu</label> <input type=text id=numer_telefonu name=numer_telefonu placeholder="Numer telefonu">                                <label for=subject>Wiadomość
-									*</label>
-                                <textarea id=subject name=subject placeholder="Wpisz wiadomość" style="height: 170px" required></textarea>
-                                <input type=radio name="zgoda RODO" value=Bike required> Dane nie są gromadzone i wykorzystane zostaną do kontaktu z klientem w celu przedstawienia oferty. <br> <br /> <input type=submit value=Wyślij> <br /> <br />
-                                <p>* - Pola wymagane
-                            </div>
+                            <div><label for="email">Adres email</label>
+                                <input type="email" name="email" id="email" class="formField" required/></div>
+                            <div><label for="phone">Numer telefonu</label>
+                                <input type="text" name="phone" id="phone" class="formField" /></div>
+
+                            <div><label for="message">Treść wiadomości</label></div>
+                            <div><textarea name="message" id="message" class="formField"></textarea></div>
+                            <input type="radio" name="zgoda RODO" value="Bike" required> Dane nie są gromadzone i wykorzystane zostaną do kontaktu z klientem w celu przedstawienia oferty.
+                            <br /> <br />
+                            <input type=submit value=Wyślij> <br /> <br />
+                            <p>* - Pola wymagane
+
                         </form>
+
+                        <br/>
+
+
+
+
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+
+
+
     <a href=#0 class="cd-top js-cd-top">Top</a>
-    <script src=js/main-scroling.js></script>
-    <script src=./dist/coreNavigation-1.0.2.min.js></script>
+    <script src="js/main-scroling.js"></script>
+    <script src="./dist/coreNavigation-1.0.2.min.js"></script>
     <script>
         $("nav").coreNavigation({
             menuPosition: "right",
