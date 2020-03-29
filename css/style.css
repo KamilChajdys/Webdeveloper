@@ -188,6 +188,15 @@ h1 a {
     float: left;
 }
 
+#logo_firmowe img {
+    width: 200px;
+    padding: 20px;
+}
+
+#img_logo {
+    text-align: center;
+}
+
 #oferta {
     margin-top: 0px;
     background: #fcfcfc;
@@ -232,7 +241,7 @@ h1 a {
     -ms-filter: grayscale(100%);
     filter: grayscale(100%);
     padding: 20px;
-    margin-top: 50px;
+    /*margin-top: 50px;*/
 }
 
 .footer {
