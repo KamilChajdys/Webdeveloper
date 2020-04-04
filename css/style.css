@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
 body {
     background: #f7f7f7;
 }
@@ -63,24 +64,26 @@ h1 a {
 }
 
 .slider_txt h1 {
-    font-weight: bold;
+    font-weight: 600;
     color: #1e8a96;
     padding-top: 10px;
+    font-size: 55px;
+    font-family: 'Rajdhani', sans-serif;
 }
 
 .slider_txt h2 {
     color: #1e8a96;
     border-radius: 20px;
-    font-weight: bold;
-    font-family: "Poppins", sans-serif;
-    text-decoration-line: overline;
+    font-weight: 600;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 32px;
 }
 
 .slider_txt h3 {
     color: #1e8a96;
     border-radius: 20px;
-    font-weight: bold;
-    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-family: 'Rajdhani', sans-serif;
     text-decoration-line: overline;
 }
 
@@ -204,6 +207,11 @@ h1 a {
 
 .container h3 {
     color: #6a6a6a;
+    text-align: center;
+}
+
+.container h4 {
+    color: #1e8a96;
     text-align: center;
 }
 

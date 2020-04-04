@@ -13,12 +13,6 @@
     |--------------------------------------------------------------------------
     | Cookie Message
     |--------------------------------------------------------------------------
-    |
-    | Displays the cookie message on first visit or 30 days after their
-    | last visit.
-    |
-    | @param event - 'reinit' to reopen the cookie message
-    |
     */
     $.fn.ihavecookies = function(options, event) {
 
@@ -47,10 +41,10 @@
             link: '/privacy-policy',
             delay: 2000,
             expires: 30,
-            moreInfoLabel: 'More information',
+            moreInfoLabel: 'Więcej informacji',
             acceptBtnLabel: 'Accept Cookies',
             advancedBtnLabel: 'Więcej o Cookies',
-            cookieTypesTitle: 'Select cookies to accept',
+            cookieTypesTitle: 'Wybierz Cookies do akceptacji',
             fixedCookieTypeLabel: 'Necessary',
             fixedCookieTypeDesc: 'These are cookies that are essential for the website to work correctly.',
             onAccept: function() {},
