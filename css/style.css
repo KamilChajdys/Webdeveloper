@@ -252,7 +252,7 @@ h1 a {
     /*margin-top: 50px;*/
 }
 
-.footer {
+.contact {
     background: #82ceed;
     background: -moz-radial-gradient(center, ellipse cover, #82ceed 0%, #1e8a96 67%, #1d9191 100%);
     background: -webkit-radial-gradient(center, ellipse cover, #82ceed 0%, #1e8a96 67%, #1d9191 100%);
@@ -263,22 +263,22 @@ h1 a {
     padding-top: 40px;
 }
 
-.footer a {
+.contact a {
     color: #ffffff;
     text-decoration: none;
 }
 
-.footer a:havier {
+.contact a:hover {
     color: #ffffff;
     text-decoration: none;
 }
 
-.footer p {
+.contact p {
     margin-top: 0;
     margin-bottom: 5px;
 }
 
-.footer h1 {
+.contact h1 {
     text-align: left;
     font-family: 'Lato', sans-serif;
     font-size: 25px;
@@ -386,6 +386,22 @@ input[type=submit]:hover {
     clear: both;
 }
 
+#footer {
+    background: #151515;
+}
+
+#footer h3 {
+    font-size: 20px;
+    color: #f7f7f7;
+}
+
+.column-3 {
+    width: 33%;
+    padding: 15px 15px 50px 15px;
+    color: #d5f3f3;
+    float: left;
+}
+
 @media only screen and (max-width:1199px) {
     #baner {
         width: 100%;
@@ -491,6 +507,18 @@ input[type=submit]:hover {
         border-bottom: 60px solid rgb(104, 202, 206);
         margin: 0px 0px 0px 0px;
     }
+
+
+
+}
+
+@media only screen and (max-width:640px) {
+    #logo_firmowe img {
+        width: 60%;
+        padding: 20px;
+    }
+
+
 }
 
 main {
@@ -510,6 +538,7 @@ main p {
     main p {
         font-size: 2rem;
     }
+    
 }
 
 .cd-top {
@@ -557,6 +586,8 @@ main p {
         right: 20px;
         bottom: 20px;
     }
+
+
 }
 
 @media only screen and (min-width:1024px) {

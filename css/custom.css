@@ -1,10 +1,10 @@
 /* Custom Style =========================== */
-
 nav {
     border-bottom: solid 1px #efefef;
     min-height: 60px;
     padding: 5px;
     background: #fff;
+    position: fixed;
 }
 
 nav .wrap-core-nav-list,
@@ -22,15 +22,30 @@ nav .brand img {
     width: 80%;
 }
 
-nav .menu li a {
+nav ul{
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 25px;
+    text-decoration: none;
+    color: #3a3a3a;
+}
+
+nav ul li{
+    list-style: none;
+    position: relative;
+    transform: 0.5s;
+}
+
+nav li a{
     display: block;
     padding: 20px 25px;
     text-decoration: none;
     color: #3a3a3a;
 }
 
-nav .menu li.active>a,
-nav .menu li a:hover {
+nav li.active>a,
+nav li a:hover {
+    text-decoration: none;
     color: #e74c3c;
 }
 
@@ -39,6 +54,55 @@ nav button {
     border: none;
     outline: none;
 }
+
+nav ul li ul {
+    position: absolute;
+    /* background-image: linear-gradient(#ffffff, #e6e6e6); */
+    background: #ffffff;
+    top: 71px;
+    left: -50px;
+    padding: 5px 5px;
+    display: block;
+    transition: 0.5s;
+    opacity: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    visibility: hidden;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    -webkit-box-shadow: 0px 51px 68px -44px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 51px 68px -44px rgba(0,0,0,0.75);
+    box-shadow: 0px 51px 68px -44px rgba(0,0,0,0.75);
+
+ }
+
+ 
+ 
+ nav ul li:hover ul {
+     opacity: 1;
+     visibility: visible;
+ }
+
+ nav ul li ul li a {
+    text-align: center;
+    width: 200px;
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #3a3a3a;
+}
+
+nav ul li ul li {
+    border-bottom: 1px solid #d6d6d6;
+}
+
+
+nav ul li ul li:last-child {
+    border: none;
+}
+
+
 
 @media (max-width: 992px) {
     nav .full-container,
@@ -66,6 +130,17 @@ nav button {
     nav .menu li:last-child a {
         border-bottom: none;
     }
+
+    nav ul li ul {
+        width: 100%;
+        z-index: 1;
+        top: 45px;
+        left: 0;
+        background: #f8f9fa;
+        border-bottom: 2px solid rgb(87, 87, 87);
+    }
+    
+
 }
 
 
