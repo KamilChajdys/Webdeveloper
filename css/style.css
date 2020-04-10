@@ -19,6 +19,22 @@ h1 a {
     color: #66CCCC;
 }
 
+/* #carouselExampleCaptions {
+    margin-top: 50px;
+} */
+
+.top-menu_fixed_hidden {
+    position: fixed !important;
+    margin-top: -100px;
+}
+
+.top-menu_fixed {
+    position: fixed !important;
+    margin-top: 0px !important;
+    transition: 1s;
+}
+
+
 #baner {
     width: 100%;
     height: 700px;
@@ -40,7 +56,7 @@ h1 a {
     border-radius: 20px;
 }
 
-#baner h1 {
+/* #baner h1 {
     font-size: 50px;
     color: #1e8a96;
     font-weight: bold;
@@ -54,7 +70,7 @@ h1 a {
     font-weight: bold;
     font-family: "Poppins", sans-serif;
     text-decoration-line: overline;
-}
+} */
 
 .slider_txt {
     width: auto;
@@ -349,6 +365,7 @@ input[type=number],
 select,
 textarea {
     width: 100%;
+    height: 130px;
     padding: 12px;
     border: 1px solid #ccc;
     margin-top: 6px;

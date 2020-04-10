@@ -128,7 +128,7 @@ nav ul li ul li:last-child {
         border-bottom: solid 1px #efefef;
     }
     nav .menu li:last-child a {
-        border-bottom: none;
+        /* border-bottom: none; */
     }
 
     nav ul li ul {
@@ -137,10 +137,9 @@ nav ul li ul li:last-child {
         top: 45px;
         left: 0;
         background: #f8f9fa;
-        border-bottom: 2px solid rgb(87, 87, 87);
+        border-bottom: 1px solid #cecece;
+        box-shadow: none;
     }
-    
-
 }
 
 

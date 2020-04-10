@@ -48,7 +48,10 @@
 
     <!--Bootstrap files - END-->
 
+
+
     <!-- Scroole TOP -->
+    
     <script src="js/jquery.min3_3_1.js"></script>
     <script>
         $(document).ready(function() {
@@ -146,14 +149,14 @@
     </script>
     -->
 
-
+    
 
 </head>
 
 <body>
     <div id="home"></div>
     <!-- MENU -->
-    <nav>
+    <nav id="top-menu">
         <div class="nav-header">
             <a href="#home" class="brand"><img src="img/logo.webp" alt="Kamil Chajdys Logo">
 
@@ -162,26 +165,27 @@
 				<span class="fa fa-bars"></span>
 			</button>
         </div>
+        
         <ul class="menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#oferta">Oferta</a>
+            <li><a href="#home" onclick="rollUp()">Home</a></li>
+            <li><a href="#oferta" onclick="rollUp()">Oferta</a>
                 <ul>
-                    <li><a href="#oferta">Strona internetowa</a></li>
-                    <li><a href="#oferta">Sklep internetowy</a></li>
-                    <li><a href="#oferta">Pozycjonowanie</a></li>
-                    <li><a href="#oferta">Kampanie Google AdWords</a></li>
-                    <li><a href="#oferta">SEO</a></li>
+                    <li><a href="#oferta" onclick="rollUp()">Strona internetowa</a></li>
+                    <li><a href="#oferta" onclick="rollUp()">Sklep internetowy</a></li>
+                    <li><a href="#oferta" onclick="rollUp()">Pozycjonowanie</a></li>
+                    <li><a href="#oferta" onclick="rollUp()">Kampanie Google AdWords</a></li>
+                    <li><a href="#oferta" onclick="rollUp()">SEO</a></li>
                 </ul>
             </li>
-            <li><a href="#sklep_internetowy">Sklep internetowy</a></li>
-            <li><a href="#logo_firmowe">Logo firmowe</a></li>
-            <li><a href="#cennik">Cennik</a></li>
-            <li><a href="#blogt">Blog</a></li>
-            <li><a href="#kontakt">Kontakt</a></li>
+            <li><a href="#sklep_internetowy" onclick="rollUp()">Sklep internetowy</a></li>
+            <li><a href="#logo_firmowe" onclick="rollUp()">Logo firmowe</a></li>
+            <li><a href="#cennik" onclick="rollUp()">Cennik</a></li>
+            <li><a href="#blogt" onclick="rollUp()">Blog</a></li>
+            <li><a href="#kontakt" onclick="rollUp()">Kontakt</a></li>
+
         </ul>
     </nav>
-
-
+    <!-- <br/ style="clear: both;"> -->
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -589,6 +593,36 @@
             container: !0
         });
     </script>
+    <script>
+    function rollUp() {
+        document.getElementById("top-menu").classList.remove("open-responsive");
+        document.getElementById("top-menu").classList.remove("open-dropdown");
+        document.getElementById("div-after-menu").classList.remove("open-dropdown");
+    }
+    </script>
+    <script>
+        $(window).scroll(function() {
+   if($(window).scrollTop() > 80) {
+    document.getElementById("top-menu").classList.add("top-menu_fixed_hidden");
+   }if($(window).scrollTop() > 200) {
+    document.getElementById("top-menu").classList.add("top-menu_fixed");
+  
+    //    $("#top-menu").css("position", "fixed"); 
+    //    $("#top-menu").css("visibility", "hidden");
+    //    $("#top-menu").css("visibility", "visible");
+    //    $("#top-menu").css("transition", "2.5s");
+   }
+   else {
+    document.getElementById("top-menu").classList.remove("top-menu_fixed");
+    document.getElementById("top-menu").classList.remove("top-menu_fixed_hidden");
+
+    // $("#top-menu").css("position", "relative");
+   }
+});
+    
+    </script>
+    
+
 </body>
 
 </html>
