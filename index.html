@@ -51,7 +51,7 @@
 
 
     <!-- Scroole TOP -->
-    
+
     <script src="js/jquery.min3_3_1.js"></script>
     <script>
         $(document).ready(function() {
@@ -149,7 +149,7 @@
     </script>
     -->
 
-    
+
 
 </head>
 
@@ -165,7 +165,7 @@
 				<span class="fa fa-bars"></span>
 			</button>
         </div>
-        
+
         <ul class="menu">
             <li><a href="#home" onclick="rollUp()">Home</a></li>
             <li><a href="#oferta" onclick="rollUp()">Oferta</a>
@@ -594,34 +594,32 @@
         });
     </script>
     <script>
-    function rollUp() {
-        document.getElementById("top-menu").classList.remove("open-responsive");
-        document.getElementById("top-menu").classList.remove("open-dropdown");
-        document.getElementById("div-after-menu").classList.remove("open-dropdown");
-    }
+        function rollUp() {
+            document.getElementById("top-menu").classList.remove("open-responsive");
+            document.getElementById("top-menu").classList.remove("open-dropdown");
+            document.getElementById("div-after-menu").classList.remove("open-dropdown");
+        }
     </script>
     <script>
         $(window).scroll(function() {
-   if($(window).scrollTop() > 80) {
-    document.getElementById("top-menu").classList.add("top-menu_fixed_hidden");
-   }if($(window).scrollTop() > 200) {
-    document.getElementById("top-menu").classList.add("top-menu_fixed");
-  
-    //    $("#top-menu").css("position", "fixed"); 
-    //    $("#top-menu").css("visibility", "hidden");
-    //    $("#top-menu").css("visibility", "visible");
-    //    $("#top-menu").css("transition", "2.5s");
-   }
-   else {
-    document.getElementById("top-menu").classList.remove("top-menu_fixed");
-    document.getElementById("top-menu").classList.remove("top-menu_fixed_hidden");
+            if ($(window).scrollTop() > 80) {
+                document.getElementById("top-menu").classList.add("top-menu_fixed_hidden");
 
-    // $("#top-menu").css("position", "relative");
-   }
-});
-    
+            }
+            if ($(window).scrollTop() >= 200) {
+                document.getElementById("top-menu").classList.add("top-menu_fixed");
+                //    $("#top-menu").css("position", "fixed"); 
+                //    $("#top-menu").css("visibility", "hidden");
+                //    $("#top-menu").css("visibility", "visible");
+                //    $("#top-menu").css("transition", "2.5s");
+            } else {
+                document.getElementById("top-menu").classList.remove("top-menu_fixed_hidden");
+                document.getElementById("top-menu").classList.remove("top-menu_fixed");
+                // $("#top-menu").css("position", "relative");
+            }
+        });
     </script>
-    
+
 
 </body>
 
