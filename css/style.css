@@ -19,6 +19,7 @@ h1 a {
     color: #66CCCC;
 }
 
+
 /* #carouselExampleCaptions {
     margin-top: 50px;
 } */
@@ -26,7 +27,6 @@ h1 a {
 .top-menu_fixed_hidden {
     position: fixed !important;
     margin-top: -100px;
-    
 }
 
 .top-menu_fixed {
@@ -34,7 +34,6 @@ h1 a {
     margin-top: 0px;
     transition: 1s;
 }
-
 
 #baner {
     width: 100%;
@@ -56,6 +55,7 @@ h1 a {
     background: #eeeeee91;
     border-radius: 20px;
 }
+
 
 /* #baner h1 {
     font-size: 50px;
@@ -84,7 +84,7 @@ h1 a {
     font-weight: 600;
     color: #1e8a96;
     padding-top: 10px;
-    font-size: 55px;
+    font-size: 30px;
     font-family: 'Rajdhani', sans-serif;
 }
 
@@ -93,7 +93,7 @@ h1 a {
     border-radius: 20px;
     font-weight: 600;
     font-family: 'Rajdhani', sans-serif;
-    font-size: 32px;
+    font-size: 12x;
 }
 
 .slider_txt h3 {
@@ -101,7 +101,7 @@ h1 a {
     border-radius: 20px;
     font-weight: 600;
     font-family: 'Rajdhani', sans-serif;
-    text-decoration-line: overline;
+    font-size: 12x;
 }
 
 .center_div {
@@ -139,12 +139,13 @@ h1 a {
     width: 220px;
 }
 
-.my_icons_box h3 {
-    font-size: 20px;
+.my_icons_box h5 {
+    font-size: 16px;
     font-weight: bold;
     margin: 0px;
     padding: 0px;
     float: left;
+    color: #6a6a6a;
 }
 
 .my_icons_box p {
@@ -189,6 +190,15 @@ h1 a {
 }
 
 .my_icons_box_center h3 {
+    font-size: 20px;
+    color: #f5f5f5 !important;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+}
+
+.my_icons_box_center h5 {
     font-size: 20px;
     color: #f5f5f5 !important;
     font-weight: bold;
@@ -525,9 +535,6 @@ input[type=submit]:hover {
         border-bottom: 60px solid rgb(104, 202, 206);
         margin: 0px 0px 0px 0px;
     }
-
-
-
 }
 
 @media only screen and (max-width:640px) {
@@ -535,8 +542,6 @@ input[type=submit]:hover {
         width: 60%;
         padding: 20px;
     }
-
-
 }
 
 main {
@@ -556,7 +561,6 @@ main p {
     main p {
         font-size: 2rem;
     }
-    
 }
 
 .cd-top {
@@ -604,8 +608,6 @@ main p {
         right: 20px;
         bottom: 20px;
     }
-
-
 }
 
 @media only screen and (min-width:1024px) {
